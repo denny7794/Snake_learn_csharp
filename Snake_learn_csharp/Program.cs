@@ -17,8 +17,10 @@ namespace Snake_learn_csharp
             Point p2 = new Point(4, 5, '#');
             p2.Draw();
 
-            HorizontalLine line = new HorizontalLine();
-            line.Draw();
+            HorizontalLine hLine = new HorizontalLine(5, 10, 8, '+');
+            hLine.Draw();
+            VerticalLine vLine = new VerticalLine(5, 10, 8, '+');
+            vLine.Draw();
 
             Console.ReadLine();
         }
