@@ -26,7 +26,7 @@ namespace Snake_learn_csharp
         public void Draw()
         {
             Console.SetCursorPosition(x, y);
-            Console.WriteLine(sym);
+            Console.Write(sym);
         }
     }
 }
