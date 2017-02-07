@@ -32,6 +32,17 @@ namespace Snake_learn_csharp
             head.Draw();
         }
 
+        internal bool IsHitTail()
+        {
+            var head = pList.Last();
+            for (int i = 0; i < pList.Count -2 ; i++)
+            {
+                if (head.IsHit(pList[i]))
+                    return true;
+            }
+            return false;
+        }
+
         private Point GetNextPoint()
         {
             Point head = pList.Last();
@@ -55,8 +66,9 @@ namespace Snake_learn_csharp
         internal bool Eat(Point food)
         {
             Point head = GetNextPoint();
-            if (head.IsHit(food))
+            if (head.IsHit(food)) 
             {
+                head.Draw(); // чтобы значок еды сразу исчез
                 food.sym = head.sym;
                 pList.Add(food);
                 return true;
