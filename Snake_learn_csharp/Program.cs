@@ -10,17 +10,21 @@ namespace Snake_learn_csharp
     {
         static void Main(string[] args)
         {
-            Point p1 = new Point(1, 3, '*');
-            p1.Draw();
-            
+            Console.SetBufferSize(80, 25);
 
-            Point p2 = new Point(4, 5, '#');
-            p2.Draw();
+            // Отрисовка рамочки
+            HorizontalLine upLine = new HorizontalLine(0, 78, 0, '+');
+            HorizontalLine downLine = new HorizontalLine(0, 78, 24, '+');
+            VerticalLine leftLine = new VerticalLine(0, 24, 0, '+');
+            VerticalLine rightLine = new VerticalLine(0, 24, 78, '+');
+            upLine.Draw();
+            downLine.Draw();
+            leftLine.Draw();
+            rightLine.Draw();
 
-            HorizontalLine hLine = new HorizontalLine(5, 10, 8, '+');
-            hLine.Draw();
-            VerticalLine vLine = new VerticalLine(5, 10, 8, '+');
-            vLine.Draw();
+            //Отрисовка точек
+            Point p = new Point(4, 5, '*');
+            p.Draw();
 
             Console.ReadLine();
         }
